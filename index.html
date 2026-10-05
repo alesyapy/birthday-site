@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    >
+
+    <meta name="theme-color" content="#17151d">
+
+    <title>Birthday Update</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="no-scroll">
+
+
+<!-- =========================================================
+     1. PIXEL LOCK SCREEN
+========================================================= -->
+
+<section id="lockScreen">
+
+    <div class="pixel-statusbar">
+
+        <span id="smallClock">
+            00:00
+        </span>
+
+        <div class="status-icons">
+            <span>◢</span>
+            <span>⌁</span>
+            <span>▰</span>
+        </div>
+
+    </div>
+
+
+    <div class="lock-content">
+
+        <div
+            class="lock-clock"
+            id="lockClock"
+        >
+            00:00
+        </div>
+
+        <div
+            class="lock-date"
+            id="lockDate"
+        >
+            сегодня
+        </div>
+
+
+        <div class="lock-spacer"></div>
+
+
+        <div
+            class="android-notification"
+            id="birthdayNotification"
+        >
+
+            <div class="notification-head">
+
+                <div class="birthday-app-icon">
+                    🎂
+                </div>
+
+                <div class="notification-app">
+                    Birthday System
+                </div>
+
+                <div class="notification-time">
+                    сейчас
+                </div>
+
+            </div>
+
+            <div class="notification-title">
+                Доступно новое обновление
+            </div>
+
+            <div class="notification-body">
+                Birthday Edition готова к установке.
+                Нажмите, чтобы продолжить.
+            </div>
+
+        </div>
+
+
+        <div class="lock-bottom">
+
+            <div class="round-lock-button">
+                ◇
+            </div>
+
+            <div class="lock-hint">
+                нажми на уведомление
+            </div>
+
+            <div class="round-lock-button">
+                ◉
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     2. BIRTHDAY UPDATE
+========================================================= -->
+
+<section
+    id="updateScreen"
+    class="hidden"
+>
+
+    <div class="update-icon">
+        🎂
+    </div>
+
+    <h2>
+        Birthday<br>
+        Update
+    </h2>
+
+    <p class="update-subtitle">
+        Устанавливаем новую версию
+        самого важного человека сегодняшнего дня.
+    </p>
+
+
+    <div class="progress-shell">
+
+        <div id="updateProgress"></div>
+
+    </div>
+
+    <div
+        class="update-percent"
+        id="updatePercent"
+    >
+        0%
+    </div>
+
+
+    <div id="updateLog"></div>
+
+
+    <button
+        class="material-button hidden"
+        id="restartButton"
+    >
+        Перезагрузить
+    </button>
+
+</section>
+
+
+
+<!-- =========================================================
+     MAIN SITE
+========================================================= -->
+
+<main id="mainSite">
+
+
+    <!-- HERO -->
+
+    <section
+        class="screen"
+        id="hero"
+    >
+
+        <div class="eyebrow">
+            birthday edition installed
+        </div>
+
+        <h1>
+            С Днём<br>
+            рождения,<br>
+            <span>любимый.</span>
+        </h1>
+
+        <p class="hero-text">
+            Я могла просто сказать
+            "С Днём рождения!".
+            Но это было бы слишком скучно.
+        </p>
+
+        <div class="hero-down">
+            листай вниз ↓
+        </div>
+
+    </section>
+
+
+
+    <!-- ОБМАНКА -->
+
+    <section
+        class="screen"
+        id="trickSection"
+    >
+
+        <div class="eyebrow">
+            подарок найден
+        </div>
+
+        <h2>
+            Ну что,<br>
+            сразу подарок?
+        </h2>
+
+        <p class="trick-subtitle">
+            Попробуй забрать.
+        </p>
+
+
+        <div class="trick-zone">
+
+            <button id="runawayButton">
+                Получить подарок
+            </button>
+
+        </div>
+
+
+        <div id="trickComment">
+            нажми на кнопку
+        </div>
+
+    </section>
+
+
+
+    <!-- BIRTHDAY SCROLL -->
+
+    <section id="birthdayScroll">
+
+        <article class="statement">
+
+            <div class="statement-text">
+                Сегодня
+            </div>
+
+        </article>
+
+
+        <article class="statement">
+
+            <div class="statement-text">
+                тебе<br>
+                можно
+            </div>
+
+        </article>
+
+
+        <article class="statement">
+
+            <div class="statement-text">
+                вообще всё<br>
+                (почти).
+            </div>
+
+        </article>
+
+
+        <article class="statement">
+
+            <div class="statement-text statement-small">
+                Шутить про меллстроя.<br><br>
+                Говорить "Вась".<br><br>
+                Спать не на своей половине.
+            </div>
+
+        </article>
+
+
+        <article class="statement">
+
+            <div class="statement-text statement-small">
+                И официально<br>
+                быть главным.<br><br>
+
+                <span class="muted-text">
+                    По крайней мере сегодня.
+                </span>
+            </div>
+
+        </article>
+
+    </section>
+
+
+
+    <!-- ПОДАРКИ -->
+
+    <section id="giftSection">
+
+        <div class="eyebrow">
+            входящие подарки
+        </div>
+
+        <h2 class="section-title">
+            У тебя тут<br>
+            кое-что накопилось
+        </h2>
+
+        <p class="section-description">
+            Нажимай на подарки.
+            Нет, настоящие я сюда не запихнула.
+        </p>
+
+
+        <div class="gift-grid">
+
+            <button class="gift-card">
+
+                <div class="gift-front">
+
+                    <span class="gift-number">
+                        ПОДАРОК 01
+                    </span>
+
+                    <span class="gift-emoji">
+                        🎁
+                    </span>
+
+                </div>
+
+                <div class="gift-back">
+
+                    <strong>
+                        +365 дней удачи
+                    </strong>
+
+                    <span>
+                        Я оформила бессрочную подписку.
+                    </span>
+
+                </div>
+
+            </button>
+
+
+            <button class="gift-card">
+
+                <div class="gift-front">
+
+                    <span class="gift-number">
+                        ПОДАРОК 02
+                    </span>
+
+                    <span class="gift-emoji">
+                        🎁
+                    </span>
+
+                </div>
+
+                <div class="gift-back">
+
+                    <strong>
+                        Безлимит на желания
+                    </strong>
+
+                    <span>
+                        Правда, исполнять их придётся
+                        иногда самостоятельно.
+                    </span>
+
+                </div>
+
+            </button>
+
+
+            <button class="gift-card">
+
+                <div class="gift-front">
+
+                    <span class="gift-number">
+                        ПОДАРОК 03
+                    </span>
+
+                    <span class="gift-emoji">
+                        🎁
+                    </span>
+
+                </div>
+
+                <div class="gift-back">
+
+                    <strong>
+                        И я ❤️
+                    </strong>
+
+                    <span>
+                        Этот подарок обмену
+                        и возврату не подлежит.
+                    </span>
+
+                </div>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ФОТОГРАФИИ -->
+
+    <section id="photos">
+
+        <div class="section-head">
+
+            <div class="eyebrow">
+                gallery
+            </div>
+
+            <h2 class="section-title">
+                Некоторые моменты,
+                которые хочу напомнить.
+            </h2>
+
+        </div>
+
+
+        <div class="photo-track">
+
+            <article class="photo-card">
+
+                <div
+                    class="photo"
+                    style="
+                    background-image: url('images/we2.jpg');
+                    "
+                ></div>
+
+                <div class="photo-info">
+
+                    <div class="photo-label">
+                        01
+                    </div>
+
+                    <div class="photo-text">
+                        Самые важные и душевные разговоры 
+                        в Панораме.
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="photo-card">
+
+                <div
+                    class="photo"
+                    style="
+                    background-image: url('images/beer.jpg');
+                    "
+                ></div>
+
+                <div class="photo-info">
+
+                    <div class="photo-label">
+                        02
+                    </div>
+
+                    <div class="photo-text">
+                        Место для твоей души.
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="photo-card">
+
+                <div
+                    class="photo"
+                    style="
+                    background-image: url('images/we.jpg');
+                    "
+                ></div>
+
+                <div class="photo-info">
+
+                    <div class="photo-label">
+                        03
+                    </div>
+
+                    <div class="photo-text">
+                        Где бы мы ни были,
+                        мне хорошо с тобой!
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <div class="swipe-tip">
+            ← свайпай фотографии →
+        </div>
+
+    </section>
+
+
+
+    <!-- СИСТЕМНАЯ ОШИБКА -->
+
+    <section id="errorSection">
+
+        <div
+            class="error-window"
+            id="errorWindow"
+        >
+
+            <div class="terminal-top">
+
+                <div class="terminal-dot"></div>
+                <div class="terminal-dot"></div>
+                <div class="terminal-dot"></div>
+
+            </div>
+
+
+            <div class="terminal-content">
+
+                <div class="terminal-red">
+                    SYSTEM ERROR
+                </div>
+
+                <br>
+
+                Обнаружена проблема.
+
+                <br><br>
+
+                Количество хороших пожеланий
+                превышает допустимый предел.
+
+                <br>
+
+                <span class="terminal-muted">
+                    CODE: BIRTHDAY_OVERFLOW
+                </span>
+
+
+                <div id="repairLog"></div>
+
+
+                <button
+                    class="material-button"
+                    id="repairButton"
+                >
+                    Исправить
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div id="repairConclusion">
+            Ошибка неустранима.<br><br>
+
+            <span class="purple-text">
+                Пусть хорошего будет
+                ещё больше.
+            </span>
+        </div>
+
+    </section>
+
+
+
+    <!-- СКРЕТЧ -->
+
+    <section id="scratchSection">
+
+        <div class="section-head">
+
+            <div class="eyebrow">
+                hidden content
+            </div>
+
+            <h2 class="section-title">
+                Я кое-что
+                здесь спрятала
+            </h2>
+
+            <p class="section-description">
+                Сотри верхний слой пальцем.
+            </p>
+
+        </div>
+
+
+        <div class="scratch-wrapper">
+
+            <div class="scratch-secret">
+
+                <strong>
+                    Ты настоящий<br>
+                    TRUE ADAM<br>❤️
+                </strong>
+
+            </div>
+
+            <canvas id="scratchCanvas"></canvas>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ТОРТ -->
+
+    <section id="cakeSection">
+
+        <div class="eyebrow">
+            обязательный пункт
+        </div>
+
+        <h2 class="section-title">
+            Кажется,
+            мы кое-что забыли
+        </h2>
+
+        <p class="section-description">
+            Нажми на каждую свечу,
+            чтобы зажечь её.
+        </p>
+
+
+        <div class="cake">
+
+            <div class="candle-row">
+
+                <button class="candle">
+                    <div class="flame"></div>
+                    <div class="candle-stick"></div>
+                </button>
+
+                <button class="candle">
+                    <div class="flame"></div>
+                    <div class="candle-stick"></div>
+                </button>
+
+                <button class="candle">
+                    <div class="flame"></div>
+                    <div class="candle-stick"></div>
+                </button>
+
+                <button class="candle">
+                    <div class="flame"></div>
+                    <div class="candle-stick"></div>
+                </button>
+
+                <button class="candle">
+                    <div class="flame"></div>
+                    <div class="candle-stick"></div>
+                </button>
+
+            </div>
+
+            <div class="cake-layer"></div>
+            <div class="cake-body"></div>
+
+        </div>
+
+
+        <div id="wishText"></div>
+
+
+        <button
+            class="material-button hidden"
+            id="wishButton"
+        >
+            Загадал
+        </button>
+
+
+        <button
+            class="material-button hidden"
+            id="cakeContinue"
+        >
+            Продолжить
+        </button>
+
+    </section>
+
+
+
+    <!-- ФАЛЬШИВЫЙ КОНЕЦ -->
+
+    <section id="fakeEnd">
+
+        <h2>
+            Готово.
+        </h2>
+
+        <p>
+            Праздничная программа завершена.
+        </p>
+
+        <button
+            class="material-button"
+            id="fakeCloseButton"
+        >
+            Закрыть
+        </button>
+
+    </section>
+
+
+
+    <!-- НАСТОЯЩЕЕ ПОЗДРАВЛЕНИЕ -->
+
+    <section id="realMessage">
+
+        <div class="eyebrow">
+            а теперь без приколов
+        </div>
+
+        <h2 class="section-title">
+            Есть кое-что,
+            что я действительно
+            хочу тебе сказать.
+        </h2>
+
+
+        <div class="letter-line">
+            Я хочу, чтобы этот год
+            принёс тебе гораздо больше
+            моментов, когда ты по-настоящему
+            счастлив.
+        </div>
+
+
+        <div class="letter-line">
+            Чтобы получалось то,
+            к чему ты стремишься,
+            и чтобы тебе хватало сил
+            на то, что действительно важно.
+        </div>
+
+
+        <div class="letter-line">
+            Чтобы рядом были люди,
+            с которыми можно быть собой,
+            смеяться и не притворяться.
+        </div>
+
+
+        <div class="letter-line">
+            А ещё я очень рада,
+            что среди этих людей
+            могу быть я.
+        </div>
+
+
+        <div class="letter-line">
+            С Днём рождения,
+            любимый ❤️
+        </div>
+
+    </section>
+
+
+
+    <!-- ФИНАЛ -->
+
+    <section id="finalSection">
+
+        <h2>
+            И последнее.
+        </h2>
+
+        <p>
+            Зажми кнопку
+            и не отпускай.
+        </p>
+
+
+        <div id="holdButton">
+
+            <div class="hold-inner">
+                удерживай
+            </div>
+
+        </div>
+
+
+        <div
+            id="finalReveal"
+            class="hidden"
+        >
+
+            <h3>
+                С Днём рождения 🎉
+            </h3>
+
+            <p>
+                А настоящий подарок
+                всё-таки существует.<br>
+                И он ждёт тебя
+                уже не на этом сайте ❤️
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- ЧЁРНЫЙ ЭКРАН -->
+
+<div id="blackout">
+
+    <div id="blackoutText">
+        Ты правда подумал,<br>
+        что это всё?
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
